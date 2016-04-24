@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<!-- Created by Josh Eimer -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="hangstyle.css">
+	
+</head>
+<body>
+
+<div id="container">
+	<div id="navbar">
+	</div>
+	<div id="intro">
+		<h1>HANGMAN</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button id="play" class="btn btn-info">Let's Play! </button>
+	</div>
+	<div id="options">
+		<h4>How many letters would you like your word to have?</h4>
+		<ul>
+			<li><button id="five_letters" class="btn btn-info">Five</button></li>
+			<li><button id="six_letters" class="btn btn-info">Six</button></li>
+			<li><button id="seven_letters" class="btn btn-info">Seven</button></li>
+			<li><button id="eight_letters" class="btn btn-info">Eight</button></li>
+		</ul>
+		<h4>What difficulty would you like?</h4>
+		<ul>
+			<li><button id="easy" class="btn btn-info">Easy (9 Fails)</button></li>
+			<li><button id="medium" class="btn btn-info">Medium (8 Fails)</button></li>
+			<li><button id="hard" class="btn btn-info">Hard (7 Fails)</button></li>
+			<li><button id="extreme" class="btn btn-info">Extreme (1 Fail)</button></li>
+		</ul>
+		<div class="the_alert">
+			<div class="alert alert-danger" role="alert">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			  	<span class="sr-only">Error:</span>
+			  	Please select both of the options.
+			</div>
+		</div>
+		<button id="submit" class="btn btn-primary">Submit Choices</button>
+	</div>
+	<div id="hangman_container">
+		<div class="hangman_pole">
+		<div class="top"></div>
+		<span class="head"></span>
+		<span class="neck"></span>
+		<span class="left_arm left_arm_hard"></span>
+		<span class="body"></span>
+		<span class="right_arm right_arm_hard"></span>
+		<div class="middle"></div>
+		<span class="legs"></span>
+		<div class="bottom_half"></div>
+		<div class="bottom"></div>
+		</div>
+		<div class="word_to_guess">
+			Incorrect Guesses
+			<ul>
+				<li class="incorrect_1">&nbsp;</li>
+				<li class="incorrect_2">&nbsp;</li>
+				<li class="incorrect_3">&nbsp;</li>
+				<li class="incorrect_4">&nbsp;</li>
+				<li class="incorrect_5">&nbsp;</li>
+				<li class="incorrect_6">&nbsp;</li>
+				<li class="incorrect_7">&nbsp;</li>
+				<li class="incorrect_8">&nbsp;</li>
+				<li class="incorrect_9">&nbsp;</li>
+			</ul>
+		</div>
+		<div class="guesses">
+			Correct Guesses
+			<ul>
+				<li class="letter_1">&nbsp;</li>
+				<li class="letter_2">&nbsp;</li>
+				<li class="letter_3">&nbsp;</li>
+				<li class="letter_4">&nbsp;</li>
+				<li class="letter_5">&nbsp;</li>
+				<li class="letter_6">&nbsp;</li>
+				<li class="letter_7">&nbsp;</li>
+				<li class="letter_8">&nbsp;</li>
+			</ul>
+		</div>
+		<span class="guess_buttons">
+			<button class="guess_letter btn btn-primary">Guess a Letter</button>
+			<button class="guess_word btn btn-primary">Guess the Whole Word</button>
+		</span>
+		<div class="guess_alert">
+			<div class="alert alert-danger" role="alert">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			  	<span class="sr-only">Warning:</span>
+			  	<span class="alert_text">Failing to guess the word will result in immediate failure! Are you sure you want to try to guess the word?</span><span class="guess_alert_buttons"> <button class="confirm_button btn btn-primary">Yes</button><button class="deny_button btn btn-danger">No</button></span>
+			</div>
+		</div>
+		<div class="guess_field">
+			<input type="text" class="guess_input" maxlength="1" size="1">
+			<button class="submit_button btn btn-primary">Submit Answer</button>
+		</div>
+		<div class="guess_field_word">
+			<input type="text" class="guess_input_word form-control" maxlength="1" size="1">
+			<button class="submit_button_word btn btn-primary">Submit Answer</button>
+			
+		</div>
+	</div>
+	<div class="final_result">
+		<span class="result_text"></span>
+		<span class="win_loss_buttons"><button class="new_game btn btn-success">Yes</button><button class="quit_game btn btn-danger">No</button></span></span>
+	</div>
+	<div class="game_over">
+		<p>Thanks for playing! Check out our other games <a href="index.html">here</a>.</p>
+	</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+<script src="hangman.js"></script>
+</body>
+</html>
