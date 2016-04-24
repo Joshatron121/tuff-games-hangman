@@ -37,6 +37,7 @@
 			<li><button id="hard" class="btn btn-info">Hard (7 Fails)</button></li>
 			<li><button id="extreme" class="btn btn-info">Extreme (1 Fail)</button></li>
 		</ul>
+		<button id="submit" class="btn btn-primary">Submit Choices</button>
 		<div class="the_alert">
 			<div class="alert alert-danger" role="alert">
 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -44,16 +45,15 @@
 			  	Please select both of the options.
 			</div>
 		</div>
-		<button id="submit" class="btn btn-primary">Submit Choices</button>
 	</div>
 	<div id="hangman_container">
 		<div class="hangman_pole">
 		<div class="top"></div>
 		<span class="head"></span>
 		<span class="neck"></span>
-		<span class="left_arm left_arm_hard"></span>
+		<span class="left_arm"></span>
 		<span class="body"></span>
-		<span class="right_arm right_arm_hard"></span>
+		<span class="right_arm"></span>
 		<div class="middle"></div>
 		<span class="legs"></span>
 		<div class="bottom_half"></div>
@@ -90,13 +90,6 @@
 			<button class="guess_letter btn btn-primary">Guess a Letter</button>
 			<button class="guess_word btn btn-primary">Guess the Whole Word</button>
 		</span>
-		<div class="guess_alert">
-			<div class="alert alert-danger" role="alert">
-				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-			  	<span class="sr-only">Warning:</span>
-			  	<span class="alert_text">Failing to guess the word will result in immediate failure! Are you sure you want to try to guess the word?</span><span class="guess_alert_buttons"> <button class="confirm_button btn btn-primary">Yes</button><button class="deny_button btn btn-danger">No</button></span>
-			</div>
-		</div>
 		<div class="guess_field">
 			<input type="text" class="guess_input" maxlength="1" size="1">
 			<button class="submit_button btn btn-primary">Submit Answer</button>
@@ -105,6 +98,13 @@
 			<input type="text" class="guess_input_word form-control" maxlength="1" size="1">
 			<button class="submit_button_word btn btn-primary">Submit Answer</button>
 			
+		</div>
+		<div class="guess_alert">
+			<div class="alert alert-danger" role="alert">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			  	<span class="sr-only">Warning:</span>
+			  	<span class="alert_text">Failing to guess the word will result in immediate failure! Are you sure you want to try to guess the word?</span><span class="guess_alert_buttons"> <button class="confirm_button btn btn-primary">Yes</button><button class="deny_button btn btn-danger">No</button></span>
+			</div>
 		</div>
 	</div>
 	<div class="final_result">
