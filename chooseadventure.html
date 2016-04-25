@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Choose Your Own Adventure!</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style type="text/css">
+
+		*{
+	margin: 0 auto;
+	padding: 0 auto;
+	color: grey;
+	}
+	body{
+		background-image: url(http://www.hercampus.com/sites/default/files/2014/10/18/hauntedhouse.jpg); 
+	}
+	#container{
+		width: 80%;
+		padding: 20px 0px 20px 0px;
+		margin-top: 15%;
+		border-radius: 30px;
+	}
+	#container:hover{
+		background-color: rgb(138,7,7);
+	}
+	#header{
+		width: 65%;
+	}
+	#header h1{
+		width: 65%;
+		position: block;
+		margin: 0 auto;
+		text-decoration: underline;
+	}
+	#header h4{
+		width: 64%;
+		position: block;
+		margin: 0 auto;
+	}
+	#story{
+		width: 64%;
+	}
+	#story p{
+		margin-top: 20px;
+	}
+	a:hover{
+		background-color: red;
+		color: black;
+	}
+	#whichWay{
+		width: 65%;
+	}
+	.secondB{
+		float: right;
+	}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Tuff Games</a>
+      <p class="navbar-text navbar-default">Page Created by Duncan Nevin</p>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Games <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          	<li><a href="index.html">Home</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="hangman.html">Hangman</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="chooseadventure.htm">Mad Libs</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>	
+	<div id="container">
+		<div id="header">
+			<h1>The Mystery of the Haunted House</h1>
+			<h4>by Paul Channel</h4>
+		</div>
+		<div id="story">
+		</div>	
+		<div id="whichWay">
+		</div>	
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		
+	$(document).ready(function(){
+		var page1 = "<p class='para'>It is summertime again, vacation time. You go to your uncle's house. He takes you on a tour around the city. There are many old buildings, but the oldest of all is on Main Street. The address is 880. He says that it is haunted, but you don't believe him.</p>";	
+		var page2 = "<p class='para'>You say, 'I will go inside.'' He says, 'I want to watch you.' You start up the stone steps of the old haunted house. You open the door and step inside and suddenly a sharp arrow streaks across in front of you! But it misses you.</p>";
+		var page3 = "<p class='para'>You stay there. Then you decide to go home, have an ice cream, and go to bed.</p></p><strong><p>THE END</p></strong>";
+		var page4 = "<p class='para'>You go up the stairs. You lean against the railing and it breaks. You fall and that's the end of you.</p><strong><p>THE END</p></strong>";
+		var page5 = "<p class='para'>You go through the swinging doors. You walk through the room. Choice: Do you go into the closet?</p><br>";
+		var page6 = "<p class='para'>You go into the closet. You fall through a trapdoor and break your leg. The walls are too smooth to climb. There is no other way up.</p></p><strong><p>THE END</p></strong>";
+		var page7 = "<p class='para'>You go into a pasaageway under the house. You make your way along and it leads to a trapdoor that takes you back to where you started from. You meet a policeman at the top and he says to you, 'You were lucky to get out of there. Don't ever go in there again!' You go home and have some ice cream.</p></p><strong><p>THE END</p></strong>";
+				$('#story').append(page1);
+				$('#whichWay').append('<a id="w1" class="firstB">Choice: Do you go inside?</a>');
+				$('#whichWay').append('<a id="w2" class="secondB">Or: Do you stay there?</a>');
+			function one(){	
+			$('#w1').click(function(){
+				$('#w1').replaceWith('<a id="w3" class="firstB">Choice: Do you go up the staircase?</a>');
+				$('#w2').replaceWith('<a id="w4" class="secondB">Or: Do you go through the swinging doors?</a>');
+				$('#story').append(page2);
+				two();
+			});
+			$('#w2').click(function(){
+				$('#story').append(page3);
+				$('#whichWay').hide();
+			});
+			}	
+			////
+			function two(){
+			$('#w3').click(function(){
+				$('#story').append(page4);
+				$('#whichWay').hide();
+			});
+			$('#w4').click(function(){
+				$('#w3').replaceWith('<a id="w5" class="firstB">Choice: Do you go into the closet?</a>');
+				$('#w4').replaceWith('<a id="w6" class="secondB">Or: Do you go into a passageway under the house?</a>');
+				$('#story').append(page5);
+				three();
+			});
+			}
+			////
+			function three(){
+			$('#w5').click(function(){
+				$('#story').append(page6);
+				$('#whichWay').hide();
+			});
+			$('#w6').click(function(){
+				$('#story').append(page7);
+				$('#whichWay').hide();
+			});
+			}
+			one();
+	});	
+</script>
+</body>
+</html>
