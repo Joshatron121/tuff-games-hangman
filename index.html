@@ -2,6 +2,7 @@
 <head>
 	<title>Tough Games</title>
 	<!-- Created by Duncan Nevin -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link href='https://fonts.googleapis.com/css?family=Vesper+Libre' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 		*{
@@ -69,19 +70,51 @@
 	</style>
 </head>
 <body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="index.html">Tuff Games</a>
+	      <p class="navbar-text navbar-default">Page Created by Duncan Nevin</p>
+	    </div>
 
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Games <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	        	<li><a href="hangman.html">Hangman</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="madlibs.html">Mad Libs</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="chooseadventure.html">Choose Your Own Adventure</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script>
 	
 	$(document).ready(function(){
-		$('body').prepend('<div id="loadHeader"></div>');
+		// $('body').prepend('<nav class="navbar navbar default"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">Tuff Games</a><p class="navbar-text navbar-default">Page Created by Duncan Nevin</p></div><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Games <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="index.html">Home</a></li><li role="separator" class="divider"></li><li><a href="madlibs.html">Mad Libs</a></li><li role="separator" class="divider"></li><li><a href="chooseadventure.html">Choose Your Own Adventure</a></li></ul></li></ul></div></div></nav></nav>');
+		$('body').append('<div id="loadHeader"></div>');
 		$('#loadHeader').append('<h1>Wonder Games</h1>');
 		$('#loadHeader').hover(function(){
 			$(this).css('background-image', 'url(http://orig07.deviantart.net/b620/f/2008/087/a/3/the_field_in_flames_by_signap.png)');
 			});
 		$('#loadHeader h1').mouseover(function(){
 			$('#loadHeader').hide(function(){
-				$('body').prepend('<div id="container"></div>');
+				$('body').append('<div id="container"></div>');
 				$('#container').append('<div id="header" class="gamePack"></div>');
 				$('#container').append('<div id="hangMan" class="gamePack">hangMan</div>');
 				$('#container').append('<div id="adLib" class="gamePack">madLib</div>');
@@ -93,7 +126,7 @@
 				$('#chooseAdventure').css('background-image', 'url(http://il9.picdn.net/shutterstock/videos/11729312/thumb/2.jpg?i10c=img)');
 				$('#hangMan').append('<a class="playNow" href="hangman.html">Play-Now</a>');
 				$('#adLib').append('<a class="playNow" href="madlibs.html">Play-Now</a>');
-				$('#chooseAdventure').append('<a class="playNow" href="/Users/WindIndustries/Desktop/beta_remote_prep/week_1/1_5_hackathon/tough_games/choose_adventure/haunted_index.html">Play-Now</a>');	
+				$('#chooseAdventure').append('<a class="playNow" href="chooseadventure.html">Play-Now</a>');	
 			});
 		});
 	});
