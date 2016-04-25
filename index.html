@@ -1,125 +1,103 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Hangman</title>
-	<!-- Created by Josh Eimer -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="hangstyle.css">
-	
+	<title>Tough Games</title>
+	<!-- Created by Duncan Nevin -->
+	<link href='https://fonts.googleapis.com/css?family=Vesper+Libre' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		*{
+			margin: 0 auto;
+			padding: 0 auto;
+			font-family: 'Vesper Libre', serif;
+		}
+		body{
+			background-image: url("http://www.crimson-moon.co.uk/Templates/time_02.jpg");
+			background-attachment: fixed;
+		}
+		div{
+			border-radius: 30px;
+		}
+		#loadHeader{
+			width: 45%;
+			height: 18%;
+			margin-top: 400px;
+			margin-left: 365px;
+			padding-top: 60px;
+			border-radius: 10px;
+			background-size: 100% 100%;
+			border-radius: 30px;
+		}
+		#loadHeader h1{
+			font-size: 60px;
+			color: black;
+			width: 50%;	
+			text-decoration: underline;	
+		}
+		.gamePack{
+			padding: 20px;
+			height: 25%;
+			margin-top: 15px;
+			margin-bottom: 30px;
+			background-size: 100% 100%;
+			color: white;
+		}
+		.gamePack a{
+			float: right;
+			margin-right: 50%;
+			margin-top: 12%;
+			font-size: 20px;
+			padding: 5px;
+			border-radius: 30px;
+			text-decoration: none;
+			color: white;
+		}
+		.gamePack a:hover{
+			background-color: black;
+		}
+		#header{
+			background-image: url(https://thecreatorsproject-images.vice.com/content-images/contentimage/no-slug/da9af9a9aa493c74ad7c6b250d52703b.jpg);
+			background-size: 100% 100%;
+			color: white;
+			height: 12%;
+		}
+		#container{
+			width: 50%;
+		}	
+		#mainContent{
+			width: 100%;
+		}
+		
+	</style>
 </head>
 <body>
 
-<div id="container">
-	<div id="navbar">
-	</div>
-	<div id="intro">
-		<h1>HANGMAN</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<button id="play" class="btn btn-info">Let's Play! </button>
-	</div>
-	<div id="options">
-		<h4>How many letters would you like your word to have?</h4>
-		<ul>
-			<li><button id="five_letters" class="btn btn-info">Five</button></li>
-			<li><button id="six_letters" class="btn btn-info">Six</button></li>
-			<li><button id="seven_letters" class="btn btn-info">Seven</button></li>
-			<li><button id="eight_letters" class="btn btn-info">Eight</button></li>
-		</ul>
-		<h4>What difficulty would you like?</h4>
-		<ul>
-			<li><button id="easy" class="btn btn-info">Easy (9 Fails)</button></li>
-			<li><button id="medium" class="btn btn-info">Medium (8 Fails)</button></li>
-			<li><button id="hard" class="btn btn-info">Hard (7 Fails)</button></li>
-			<li><button id="extreme" class="btn btn-info">Extreme (1 Fail)</button></li>
-		</ul>
-		<button id="submit" class="btn btn-primary">Submit Choices</button>
-		<div class="the_alert">
-			<div class="alert alert-danger" role="alert">
-				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-			  	<span class="sr-only">Error:</span>
-			  	Please select both of the options.
-			</div>
-		</div>
-	</div>
-	<div id="hangman_container">
-		<div class="hangman_pole">
-		<div class="top"></div>
-		<span class="head"></span>
-		<span class="neck"></span>
-		<span class="left_arm"></span>
-		<span class="body"></span>
-		<span class="right_arm"></span>
-		<div class="middle"></div>
-		<span class="legs"></span>
-		<div class="bottom_half"></div>
-		<div class="bottom"></div>
-		</div>
-		<div class="word_to_guess">
-			Incorrect Guesses
-			<ul>
-				<li class="incorrect_1">&nbsp;</li>
-				<li class="incorrect_2">&nbsp;</li>
-				<li class="incorrect_3">&nbsp;</li>
-				<li class="incorrect_4">&nbsp;</li>
-				<li class="incorrect_5">&nbsp;</li>
-				<li class="incorrect_6">&nbsp;</li>
-				<li class="incorrect_7">&nbsp;</li>
-				<li class="incorrect_8">&nbsp;</li>
-				<li class="incorrect_9">&nbsp;</li>
-			</ul>
-		</div>
-		<div class="guesses">
-			Correct Guesses
-			<ul>
-				<li class="letter_1">&nbsp;</li>
-				<li class="letter_2">&nbsp;</li>
-				<li class="letter_3">&nbsp;</li>
-				<li class="letter_4">&nbsp;</li>
-				<li class="letter_5">&nbsp;</li>
-				<li class="letter_6">&nbsp;</li>
-				<li class="letter_7">&nbsp;</li>
-				<li class="letter_8">&nbsp;</li>
-			</ul>
-		</div>
-		<span class="guess_buttons">
-			<button class="guess_letter btn btn-primary">Guess a Letter</button>
-			<button class="guess_word btn btn-primary">Guess the Whole Word</button>
-		</span>
-		<div class="guess_field">
-			<input type="text" class="guess_input" maxlength="1" size="1">
-			<button class="submit_button btn btn-primary">Submit Answer</button>
-		</div>
-		<div class="guess_field_word">
-			<input type="text" class="guess_input_word form-control" maxlength="1" size="1">
-			<button class="submit_button_word btn btn-primary">Submit Answer</button>
-			
-		</div>
-		<div class="guess_alert">
-			<div class="alert alert-danger" role="alert">
-				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-			  	<span class="sr-only">Warning:</span>
-			  	<span class="alert_text">Failing to guess the word will result in immediate failure! Are you sure you want to try to guess the word?</span><span class="guess_alert_buttons"> <button class="confirm_button btn btn-primary">Yes</button><button class="deny_button btn btn-danger">No</button></span>
-			</div>
-		</div>
-	</div>
-	<div class="final_result">
-		<span class="result_text"></span>
-		<span class="win_loss_buttons"><button class="new_game btn btn-success">Yes</button><button class="quit_game btn btn-danger">No</button></span></span>
-	</div>
-	<div class="game_over">
-		<p>Thanks for playing! Check out our other games <a href="index.html">here</a>.</p>
-	</div>
-</div>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-<script src="hangman.js"></script>
+<script>
+	
+	$(document).ready(function(){
+		$('body').prepend('<div id="loadHeader"></div>');
+		$('#loadHeader').append('<h1>Wonder Games</h1>');
+		$('#loadHeader').hover(function(){
+			$(this).css('background-image', 'url(http://orig07.deviantart.net/b620/f/2008/087/a/3/the_field_in_flames_by_signap.png)');
+			});
+		$('#loadHeader h1').mouseover(function(){
+			$('#loadHeader').hide(function(){
+				$('body').prepend('<div id="container"></div>');
+				$('#container').append('<div id="header" class="gamePack"></div>');
+				$('#container').append('<div id="hangMan" class="gamePack">hangMan</div>');
+				$('#container').append('<div id="adLib" class="gamePack">adLib</div>');
+				$('#container').append('<div id="chooseAdventure" class="gamePack">chooseAdventure</div>');
+				$('#header').prepend('<h1>Welcome to these masterful mind games!</h1>');
+				$('#header').append("<h2>Created by Wonder Games</h2>");
+				$('#hangMan').css('background-image', 'url(http://orig15.deviantart.net/bee9/f/2012/249/c/7/and_there_were_all_of_them____by_tania1288-d5ds77q.jpg)');
+				$('#adLib').css('background-image', 'url(http://static4.businessinsider.com/image/5567321669bedd65380e11f6-1200-500/the-vision.jpg)');				
+				$('#chooseAdventure').css('background-image', 'url(http://il9.picdn.net/shutterstock/videos/11729312/thumb/2.jpg?i10c=img)');
+				$('#hangMan').append('<a class="playNow" href="hangman.html">Play-Now</a>');
+				$('#adLib').append('<a class="playNow" href="http://www.wordblanks.com/">Play-Now</a>');
+				$('#chooseAdventure').append('<a class="playNow" href="/Users/WindIndustries/Desktop/beta_remote_prep/week_1/1_5_hackathon/tough_games/choose_adventure/haunted_index.html">Play-Now</a>');	
+			});
+		});
+	});
+	
+</script>
 </body>
 </html>

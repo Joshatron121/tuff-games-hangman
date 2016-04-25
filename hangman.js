@@ -219,6 +219,7 @@ $(document).ready(function(){
 				}
 			};
 
+
 			if(matched === wordChoice.length){
 				$('.result_text').text('Congratulations, You Win! Would you like to play again?')
 				$('.guess_buttons').hide();
