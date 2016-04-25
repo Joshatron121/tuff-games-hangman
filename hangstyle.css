@@ -1,0 +1,240 @@
+body {
+	background-color: #4169e1;
+	color: white;
+}
+
+#container {
+	margin: 0 auto;
+	height: 500px;
+	max-width: 750px;
+}
+
+#intro {
+	text-align: center;
+	margin: 0 auto 5% 0;
+}
+
+#options {
+	text-align: center;
+	display: none;
+}
+
+#options li {
+	display: inline-block;
+	list-style-type: none;
+}
+
+#hangman_container {
+	padding: 5% 0 5% 0;
+	margin: 5% auto;
+	height: 550px;
+	max-width: 750px;
+	display: none;
+	border-radius: 15%;
+	background-color: #273f87;
+	box-shadow: 10% 10% grey;
+}
+
+.hangman_pole {
+	width: 75%;
+	height: 50%;
+	margin: 0 auto;
+}
+.top {
+	margin: 10% auto 0 auto;
+	width: 20%;
+	height: 5%;
+	border: 2px solid white;
+	border-bottom: none;
+}
+.middle {
+	margin: 0 auto 0 auto;
+	width: 20%;
+	height: 37%;
+	border: 2px solid white;
+	border-left: none;
+	border-bottom: none;
+	border-top: none;
+}
+.bottom {
+	margin: 0 auto 5% auto;
+	width: 50%;
+	border: 2px solid white;
+	border-top: none;
+}
+.bottom_half {
+	margin: 0 auto 0 auto;
+	width: 20%;
+	height: 32%;
+	border: 2px solid white;
+	border-left: none;
+	border-bottom: none;
+	border-top: none;
+}
+.head {
+	margin: 0 57.4% 0 37.7%;
+	width: 5%;
+	max-width: 28.1px;
+	float: left;
+	border: 2px none white;
+	border-radius: 100%;
+}
+.head:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+.neck {
+	float: left;
+	height: 3%;
+	margin: 0 59.4% 0 40%;
+	max-width: 1px;
+	border: 1px none white;
+}
+.left_arm {
+	float: left;
+	width: 2%;
+	height: 15%;
+	border: 2px none white;
+	border-top-left-radius: 100%;
+	margin: 0 0 0 34.7%;
+}
+.left_arm_hard {
+	float: left;
+	width: 2%;
+	height: 15%;
+	border: 2px none white;
+	border-top-left-radius: 100%;
+	margin: 0 0 0 34.7%;
+}
+.body {
+	float: left;
+	width: 7%;
+	height: 20%;
+	border: 2px none white;
+	border-bottom-right-radius: 15%;
+	border-bottom-left-radius: 15%;
+}
+.right_arm {
+	float: left;
+	width: 2%;
+	height: 15%;
+	border: 2px none white;
+	border-top-right-radius: 100%;
+}
+.right_arm_hard {
+	float: left;
+	width: 2%;
+	height: 15%;
+	border: 2px none white;
+	border-top-right-radius: 100%;
+	
+}
+.legs {
+	float: left;
+	width: 4.7%;
+	height: 20%;
+	margin: 0 0 0 37.95%;
+	border: 2px none white;
+}
+.word_to_guess {
+	text-align: center;
+}
+.word_to_guess ul {
+	display: inline;
+	content-align: center;
+}
+.guesses {
+	margin: 5% 0 5% 30%;
+}
+.guesses ul {
+	display: inline;
+}
+.word_to_guess li {
+	width: 2%;
+	border-bottom: 2px solid white;
+	list-style-type: none;
+	display: inline-block;
+	visibility: hidden;
+}
+.guesses li {
+	width: 2%;
+	border-bottom: 2px solid white;
+	list-style-type: none;
+	display: inline-block;
+	visibility: hidden;
+}
+.the_alert {
+	display: none;
+	margin: 2% 0 0 0;
+}
+.guess_buttons {
+	margin: 2% 0 0 30%;
+	display: block;
+}
+.guess_word {
+	margin: 0 0 0 5%;
+}
+.guess_alert {
+	margin: 5% 0 0 0;
+	text-align: center;
+	display: none;
+}
+.deny_button {
+	margin: 0 0 0 2%;
+}
+.guess_field {
+
+	display: none;
+	margin: 0 0 0 40%;
+}
+.guess_field_word {
+
+	display: none;
+	margin: 0 0 0 40%;
+}
+.final_result {
+	display: none;
+}
+.game_over {
+	display: none;
+}
+.guess_input_word {
+	width: 40%;
+}
+.submit_button_word{
+	margin: 2% 7% 0 7%;
+}
+
+
+#intro {
+	background-color: #273f87;
+	margin: 20% 0 0 0;
+	padding: 5% 5% 5% 5%;
+	border-radius: 15%;
+}
+
+#options, .final_result, .game_over{
+	background-color: #273f87;
+	margin: 20% 0 0 0;
+	padding: 5% 5% 5% 5%;
+	border-radius: 15%;
+}
+
+#options h4 {
+	margin: 4% 0 0 0;
+}
+#options ul {
+	margin: 2% 0 0 0;
+}
+input {
+	color: black;
+}
+
+#submit {
+	margin: 4% 0 0 0; 
+}
+
+#play {
+	margin: 4% 0 0 0;
+}
