@@ -1,0 +1,103 @@
+<html>
+<head>
+	<title>Tough Games</title>
+	<!-- Created by Duncan Nevin -->
+	<link href='https://fonts.googleapis.com/css?family=Vesper+Libre' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		*{
+			margin: 0 auto;
+			padding: 0 auto;
+			font-family: 'Vesper Libre', serif;
+		}
+		body{
+			background-image: url("http://www.crimson-moon.co.uk/Templates/time_02.jpg");
+			background-attachment: fixed;
+		}
+		div{
+			border-radius: 30px;
+		}
+		#loadHeader{
+			width: 45%;
+			height: 18%;
+			margin-top: 400px;
+			margin-left: 365px;
+			padding-top: 60px;
+			border-radius: 10px;
+			background-size: 100% 100%;
+			border-radius: 30px;
+		}
+		#loadHeader h1{
+			font-size: 60px;
+			color: black;
+			width: 50%;	
+			text-decoration: underline;	
+		}
+		.gamePack{
+			padding: 20px;
+			height: 25%;
+			margin-top: 15px;
+			margin-bottom: 30px;
+			background-size: 100% 100%;
+			color: white;
+		}
+		.gamePack a{
+			float: right;
+			margin-right: 50%;
+			margin-top: 12%;
+			font-size: 20px;
+			padding: 5px;
+			border-radius: 30px;
+			text-decoration: none;
+			color: white;
+		}
+		.gamePack a:hover{
+			background-color: black;
+		}
+		#header{
+			background-image: url(https://thecreatorsproject-images.vice.com/content-images/contentimage/no-slug/da9af9a9aa493c74ad7c6b250d52703b.jpg);
+			background-size: 100% 100%;
+			color: white;
+			height: 12%;
+		}
+		#container{
+			width: 50%;
+		}	
+		#mainContent{
+			width: 100%;
+		}
+		
+	</style>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+	
+	$(document).ready(function(){
+		$('body').prepend('<div id="loadHeader"></div>');
+		$('#loadHeader').append('<h1>Wonder Games</h1>');
+		$('#loadHeader').hover(function(){
+			$(this).css('background-image', 'url(http://orig07.deviantart.net/b620/f/2008/087/a/3/the_field_in_flames_by_signap.png)');
+			});
+		$('#loadHeader h1').mouseover(function(){
+			$('#loadHeader').hide(function(){
+				$('body').prepend('<div id="container"></div>');
+				$('#container').append('<div id="header" class="gamePack"></div>');
+				$('#container').append('<div id="hangMan" class="gamePack">hangMan</div>');
+				$('#container').append('<div id="adLib" class="gamePack">adLib</div>');
+				$('#container').append('<div id="chooseAdventure" class="gamePack">chooseAdventure</div>');
+				$('#header').prepend('<h1>Welcome to these masterful mind games!</h1>');
+				$('#header').append("<h2>Created by Wonder Games</h2>");
+				$('#hangMan').css('background-image', 'url(http://orig15.deviantart.net/bee9/f/2012/249/c/7/and_there_were_all_of_them____by_tania1288-d5ds77q.jpg)');
+				$('#adLib').css('background-image', 'url(http://static4.businessinsider.com/image/5567321669bedd65380e11f6-1200-500/the-vision.jpg)');				
+				$('#chooseAdventure').css('background-image', 'url(http://il9.picdn.net/shutterstock/videos/11729312/thumb/2.jpg?i10c=img)');
+				$('#hangMan').append('<a class="playNow" href="hangman.html">Play-Now</a>');
+				$('#adLib').append('<a class="playNow" href="http://www.wordblanks.com/">Play-Now</a>');
+				$('#chooseAdventure').append('<a class="playNow" href="/Users/WindIndustries/Desktop/beta_remote_prep/week_1/1_5_hackathon/tough_games/choose_adventure/haunted_index.html">Play-Now</a>');	
+			});
+		});
+	});
+	
+</script>
+</body>
+</html>

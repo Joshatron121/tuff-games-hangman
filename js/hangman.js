@@ -41,7 +41,7 @@ $(document).ready(function(){
 		for (y = 0; y <= clearDifficulty.length - 1; y++){
 			$(clearDifficulty[y][0]).css(clearDifficulty[y][1],clearDifficulty[y][2]);
 		}
-
+		$('.guess_input_word').val("");
 		previousGuesses = [];
 		correctGuess = 0;
 		incorrectGuesses = 0;
@@ -90,13 +90,13 @@ $(document).ready(function(){
 	$('#easy').click(function(){
 		extreme = false;
 		difficulty = [revealBody.head,revealBody.neck,revealBody.body,revealBody.leftShoulder,revealBody.rightShoulder,revealBody.leftArm,revealBody.rightArm,revealBody.leftLeg,revealBody.rightLeg];
-		clearDifficulty = [hideBody.head,hideBody.neck,hideBody.body,hideBody.leftShoulder,hideBody.rightShoulder,hideBody.leftArm,hideBody.rightArm,hideBody.leftLeg,hideBody.rightLeg];
+		clearDifficulty = [hideBody.head,hideBody.neck,hideBody.body,hideBody.leftArmHard,hideBody.rightArmHard,hideBody.leftLeg,hideBody.rightLeg];
 	})
 
 	$('#medium').click(function(){
 		extreme = false;
 		difficulty = [revealBody.head,revealBody.neck,revealBody.body,revealBody.leftArmHard,revealBody.rightShoulder,revealBody.rightArm,revealBody.leftLeg,revealBody.rightLeg];
-		clearDifficulty = [hideBody.head,hideBody.neck,hideBody.body,hideBody.leftArmHard,hideBody.rightShoulder,hideBody.rightArm,hideBody.leftLeg,hideBody.rightLeg];
+		clearDifficulty = [hideBody.head,hideBody.neck,hideBody.body,hideBody.leftArmHard,hideBody.rightArmHard,hideBody.leftLeg,hideBody.rightLeg];
 	})
 
 	$('#hard').click(function(){
@@ -122,6 +122,7 @@ $(document).ready(function(){
 			makeVisible(difficulty,"incorrect_");
 
 			$('#options').hide();
+			$('.guess_buttons').fadeIn();
 			$('#hangman_container').fadeIn();
 			splitWord = wordChoice.split('');
 		};
@@ -129,6 +130,7 @@ $(document).ready(function(){
 	$('.guess_letter').click(function(){
 		$('.guess_buttons').hide();
 		$('.guess_field').css('display','inline-block');
+		$('.guess_input').focus();
 	})
 
 	$('.guess_word').click(function(){
@@ -139,6 +141,7 @@ $(document).ready(function(){
 			$('.guess_input_word').attr('maxlength',wordChoice.length);
 			$('.guess_input_word').attr('size',wordChoice.length);
 			$('.guess_field_word').fadeIn();
+			$('.guess_input_word').focus();
 		});
 		$('.deny_button').click(function(){
 			$('.guess_alert').hide();
@@ -155,7 +158,7 @@ $(document).ready(function(){
 			$('#hangman_container').hide();
 			$('.final_result').fadeIn();
 		} else {
-			$('.result_text').text('Oh no! That wasn\'t right. Play again?');
+			$('.result_text').text('Oh no! That wasn\'t right. The correct word was ' + wordChoice.toUpperCase() + '. Play again?');
 			$('.guess_field_word').hide();
 			$('#hangman_container').hide();
 			$('.final_result').fadeIn();
@@ -177,6 +180,7 @@ $(document).ready(function(){
 				$('.alert_text').text('You have already guessed this letter. Please try again.');
 				$('.guess_alert_buttons').hide();
 				$('.guess_alert').fadeIn();
+				$('.guess_input').val("");
 				alreadyGuessed = true;
 			} else if (listOfLetters.indexOf(userChoice) < 0){
 				$('.alert_text').text('Only letters please! Try again.');
@@ -204,17 +208,17 @@ $(document).ready(function(){
 				incorrectGuesses++
 				if(incorrectGuesses <= difficulty.length){
 					if(extreme === true) {
-						$('.head').css('visibility','visible');
-						$('.neck').css('visibility','visible');
-						$('.body').css('visibility','visible');
-						$('.left_arm_hard').css('visibility','visible');
-						$('.right_arm_hard').css('visibility','visible');
-						$('.legs').css('visibility','visible');
-						$('.legs').css('border-right','2px solid white');
+						$('.head').css('border-style','solid');
+						$('.neck').css('border-style','solid');
+						$('.body').css('border-style','solid');
+						$('.left_arm').css('border-style','solid none none solid');
+						$('.right_arm').css('border-style','solid solid none none');
+						$('.legs').css('border-style','none solid none solid');
 					}
 					$(difficulty[incorrectGuesses - 1][0]).css(difficulty[incorrectGuesses - 1][1],difficulty[incorrectGuesses - 1][2]);
 				}
 			};
+
 
 			if(matched === wordChoice.length){
 				$('.result_text').text('Congratulations, You Win! Would you like to play again?')
@@ -223,8 +227,8 @@ $(document).ready(function(){
 				$('.final_result').fadeIn();
 			}
 
-			if(incorrectGuesses === difficulty.length + 1){
-				$('.result_text').text('Oh no! You didn\'t quite make it. Try again?');
+			if(incorrectGuesses === difficulty.length){
+				$('.result_text').text('Oh no! You didn\'t quite make it. The correct word was ' + wordChoice.toUpperCase() + '. Try again?');
 				$('.guess_buttons').hide();
 				$('#hangman_container').hide();
 				$('.final_result').fadeIn();
@@ -233,6 +237,18 @@ $(document).ready(function(){
 			$('.guess_input').val("");
 			$('.guess_field').hide();
 			$('.guess_buttons').fadeIn();
+		}
+	});
+
+	$('.guess_input').keyup(function(e){
+		if(e.which === 13) {
+			$('.submit_button').click();
+		}
+	});
+
+	$('.guess_input_word').keyup(function(e){
+		if(e.which === 13) {
+			$('.submit_button_word').click();
 		}
 	});
 
@@ -247,34 +263,33 @@ $(document).ready(function(){
 		}
 	}
 
+
 });
 
 var revealBody = {
-	head: ['.head','visibility','visible'],
-	neck: ['.neck','visibility','visible'],
-	body: ['.body','visibility','visible'],
-	leftShoulder: ['.left_arm','visibility','visible'],
-	rightShoulder: ['.right_arm','visibility','visible'],
-	leftArmHard: ['.left_arm_hard','visibility','visible'],
-	leftArm: ['.left_arm','border-left','2px solid white'],
-	rightArm: ['.right_arm','border-right','2px solid white'],
-	rightArmHard: ['right_arm_hard','visibility','visible'],
-	leftLeg: ['.legs','visibility','visible'],
-	rightLeg: ['.legs','border-right','2px solid white']
+	head: ['.head','border-style','solid'],
+	neck: ['.neck','border-style','solid'],
+	body: ['.body','border-style','solid'],
+	leftShoulder: ['.left_arm','border-style','solid none none none'],
+	rightShoulder: ['.right_arm','border-style','solid none none none'],
+	leftArm: ['.left_arm','border-style','solid none none solid'],
+	leftArmHard: ['.left_arm','border-style','solid none none solid'],
+	rightArm: ['.right_arm','border-style','solid solid none none'],
+	rightArmHard: ['.right_arm','border-style','solid solid none none'],
+	leftLeg: ['.legs','border-style','none none none solid'],
+	rightLeg: ['.legs','border-style','none solid none solid']
 }
 
 var hideBody = {
-	head: ['.head','visibility','hidden'],
-	neck: ['.neck','visibility','hidden'],
-	body: ['.body','visibility','hidden'],
-	leftShoulder: ['.left_arm','visibility','hidden'],
-	rightShoulder: ['.right_arm','visibility','hidden'],
-	leftArmHard: ['.left_arm_hard','visibility','hidden'],
-	leftArm: ['.left_arm','border-left','none'],
-	rightArm: ['.right_arm','border-right','none'],
-	rightArmHard: ['.right_arm_hard','visibility','hidden'],
-	leftLeg: ['.legs','visibility','hidden'],
-	rightLeg: ['.legs','border-right','none']
+	head: ['.head','border-style','none'],
+	neck: ['.neck','border-style','none'],
+	body: ['.body','border-style','none'],
+	leftShoulder: ['.left_arm','border-style','none'],
+	rightShoulder: ['.right_arm','border-style','none'],
+	leftArmHard: ['.left_arm','border-style','none'],
+	rightArmHard: ['.right_arm','border-style','none'],
+	leftLeg: ['.legs','border-style','none'],
+	rightLeg: ['.legs','border-style','none'],
 }
 
 var previousWords = {

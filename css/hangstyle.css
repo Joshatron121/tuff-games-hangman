@@ -27,7 +27,7 @@ body {
 #hangman_container {
 	padding: 5% 0 5% 0;
 	margin: 5% auto;
-	height: 500px;
+	height: 550px;
 	max-width: 750px;
 	display: none;
 	border-radius: 15%;
@@ -75,9 +75,8 @@ body {
 	width: 5%;
 	max-width: 28.1px;
 	float: left;
-	border: 2px solid white;
+	border: 2px none white;
 	border-radius: 100%;
-	visibility: hidden;
 }
 .head:after {
 	content: "";
@@ -89,75 +88,53 @@ body {
 	height: 3%;
 	margin: 0 59.4% 0 40%;
 	max-width: 1px;
-	border: 2px solid white;
-	border-top: none;
-	border-bottom: none;
-	border-right: none;
-	visibility: hidden;
+	border: 1px none white;
 }
 .left_arm {
 	float: left;
 	width: 2%;
 	height: 15%;
-	border: 2px solid white;
+	border: 2px none white;
 	border-top-left-radius: 100%;
-	border-right: none;
-	border-bottom: none;
-	border-left: none;
 	margin: 0 0 0 34.7%;
-	visibility: hidden;
 }
 .left_arm_hard {
 	float: left;
 	width: 2%;
 	height: 15%;
-	border: 2px solid white;
+	border: 2px none white;
 	border-top-left-radius: 100%;
-	border-right: none;
-	border-bottom: none;
 	margin: 0 0 0 34.7%;
-	visibility: hidden;
 }
 .body {
 	float: left;
 	width: 7%;
 	height: 20%;
-	border: 2px solid white;
+	border: 2px none white;
 	border-bottom-right-radius: 15%;
 	border-bottom-left-radius: 15%;
-	visibility: hidden;
 }
 .right_arm {
 	float: left;
 	width: 2%;
 	height: 15%;
-	border: 2px solid white;
+	border: 2px none white;
 	border-top-right-radius: 100%;
-	border-left: none;
-	border-right: none;
-	border-bottom: none;
-	visibility: hidden;
 }
 .right_arm_hard {
 	float: left;
 	width: 2%;
 	height: 15%;
-	border: 2px solid white;
+	border: 2px none white;
 	border-top-right-radius: 100%;
-	border-left: none;
-	border-bottom: none;
-	visibility: hidden;
+	
 }
 .legs {
 	float: left;
 	width: 4.7%;
 	height: 20%;
 	margin: 0 0 0 37.95%;
-	border: 2px solid white;
-	border-bottom: none;
-	border-top: none;
-	border-right: none;
-	visibility: hidden;
+	border: 2px none white;
 }
 .word_to_guess {
 	text-align: center;
@@ -188,6 +165,7 @@ body {
 }
 .the_alert {
 	display: none;
+	margin: 2% 0 0 0;
 }
 .guess_buttons {
 	margin: 2% 0 0 30%;
@@ -224,8 +202,9 @@ body {
 	width: 40%;
 }
 .submit_button_word{
-	margin: 0 7% 0 7%;
+	margin: 2% 7% 0 7%;
 }
+
 
 #intro {
 	background-color: #273f87;
