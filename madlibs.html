@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Created by Kent Moreland -->
+	<title>Mad Libs</title>
+	<link rel="stylesheet" type="text/css" href="css/madstyles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="siteContainer">
+		
+		<header>
+			<img src="images/lettersRandom.png" id="mainBanner" class="banner" alt="Picture of Letters">
+			<img src="images/burgerFriesBeer.png" id="cafeteriaBanner" class="banner" alt="Picture of a Burger, fries and a beer">
+					
+		</header>
+		<h1 class="pageTitle" id="mainTitle">Mad Libs!</h1>
+		<h1 class="pageTitle" id="cafeteriaTitle">Our Cafeteria</h1>
+
+		<div id="intro">
+			 <p><span id="introfw">Mad Libs:</span></p>
+			 <p>A phrasal template word <span class="highlight">game</span> where you, the player, are prompted for a list of words to substitute for blanks in the story before reading the - often comical or <span class="highlight">nonsensical</span> - story aloud. This game is frequently played as a <span class="highlight">party</span> game or as a pastime. Have fun!   </p>
+			<br>
+			<button id="playButton"> Play </button>
+		</div>
+
+		<div id="mainContent">
+
+			<div id="textWrapper">
+				
+				<h3 class="help" id="emptyBlank"> Oops! You've got an empty blank. </h3>
+				
+				<h3 class="help" id="tooLong">That's a really long word, maybe something shorter will work.</h3>
+				
+				<h3 class="help" id="noChange">Oops! You didn't change anything.</h3>
+				
+				<p id="contentForm">
+					Our school Cafeteria has really 
+					<button id="minusOne" class="hiddenButton done">Change word</button> 
+					<button id="one" class="chooseWord">choose word</button>
+					<span id="wordOne" class="word"></span> food. 
+
+					Just thinking about it makes my stomach 
+					<button id="minusTwo" class="hiddenButton done">Change word</button> 
+					<button id="two" class="chooseWord">choose word</button> 
+					<span id="wordTwo" class="word"></span>. 
+
+					The sphaghetti is 
+					<button id="minusThree" class="hiddenButton done">Change word</button>
+					<button id="three" class="chooseWord">choose word</button>
+					 <span id="wordThree" class="word"></span> and tastes like 
+					 
+					 <button id="minusFour" class="hiddenButton done">Change word</button>
+					 <button id="four" class="chooseWord">choose word</button> 
+					 <span id="wordFour" class="word"></span>. 
+
+					One day, I swear one of my meatballs started to 
+					<button id="minusFive" class="hiddenButton done">Change word</button>
+					<button id="five" class="chooseWord">choose word</button> 
+					<span id="wordFive" class="word"></span> ! 
+
+					The turkey tacos are totally 
+					<button id="minusSix" class="hiddenButton done">Change word</button>
+					<button id="six" class="chooseWord">choose word</button> 
+					<span id="wordSix" class="word"></span> and look kind of like old 
+					
+					<button id="minusSeven" class="hiddenButton done">Change word</button>
+					<button id="seven" class="chooseWord">choose word</button> 
+					<span id="wordSeven" class="word"></span>. 
+
+					My friend Dana actually likes the meatloaf, even though it's 
+					<button id="minusEight" class="hiddenButton done">change word</button>
+					<button id="eight" class="chooseWord">choose word</button> 
+					<span id="wordEight" class="word"></span> and 
+					
+					<button id="minusNine" class="hiddenButton done">change word</button>
+					<button id="nine" class="chooseWord">choose word</button> 
+					<span id="wordNine" class="word"></span>. 
+
+					I call it "mystery meatloaf" and think it's really made out of 
+					<button id="minusTen" class="hiddenButton done">change word</button>
+					<button id="ten" class="chooseWord">choose word</button> 
+					<span id="wordTen" class="word"></span>. 
+
+					My dad said he'd make my lunches, but the first day, he made me a sandwich out of 
+					<button id="minusEleven" class="hiddenButton done">change word</button>
+					<button id="eleven" class="chooseWord">choose word</button> 
+					<span id="wordEleven"class="word"></span> and peanut butter! I think I'd rather take my chances with the cafeteria.
+				</p>
+				
+				<div id="positionFinishButton">
+				<button id="finish" class="hiddenButton">Generate Mad-Lib</button>
+				</div>
+<!-- 				<div id="fbshare">
+					<a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+  Share on Facebook
+</a>
+				</div> -->
+		</div>
+		</div>
+		</div>
+		<footer id="footer">
+
+			<div id="footerForm">
+				<h3>R. Kent Moreland II</h3>
+			</div>
+
+		</footer>
+
+<script type="text/javascript" src="js/madlibs.js"> </script>
+</body>
+</html>
